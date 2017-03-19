@@ -16,6 +16,9 @@ app.get('/', function(req, res) {
   res.send('Hello, world.')
 })
 
+var actions = require('./actions')
+app.use('/actions', actions)
+
 app.listen(port, function() {
   console.log('Server running on port', port)
 })
