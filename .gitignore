@@ -1,3 +1,5 @@
+*.paw
+
 # Logs
 logs
 *.log
