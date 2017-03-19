@@ -23,13 +23,20 @@ describe('The action handler', function(){
     .expect('Location', 'https://actionnetwork.org/forms/throw-some-sand-in-the-gears-of-the-right-wing-machine')
     .end(done)
   })
+  it('redirects to the HTML form signup page if a malformed email is provided', function(done) {
+    supertest.get('/actions/Affinity-Opt-In')
+    .query({
+      email: 'foob@arrr'
+    })
+    .expect(302)
+    .expect('Location', 'https://actionnetwork.org/forms/throw-some-sand-in-the-gears-of-the-right-wing-machine')
+    .end(done)
+  })
   it('redirects to the thank you page after successful form submission', function(done){
     supertest.get('/actions/Affinity-Opt-In')
-    .query(
-      {
-        email: 'foo@bar.com'
-      }
-    )
+    .query({
+      email: 'foo@bar.com'
+    })
     .expect(302)
     .expect('Location','https://actionnetwork.org/forms/throw-some-sand-in-the-gears-of-the-right-wing-machine/thankyou')
     .end(done)
