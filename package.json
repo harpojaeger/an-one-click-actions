@@ -1,0 +1,33 @@
+{
+  "name": "an-one-click-actions",
+  "version": "1.0.0",
+  "description": "Enable Action Network users to take actions with a single click from an email.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harpojaeger/an-one-click-actions.git"
+  },
+  "keywords": [
+    "Action",
+    "Network"
+  ],
+  "author": "Harpo Jaeger",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/harpojaeger/an-one-click-actions/issues"
+  },
+  "homepage": "https://github.com/harpojaeger/an-one-click-actions#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2"
+  }
+}
