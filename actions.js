@@ -10,8 +10,7 @@ router.get('/:slug', function(req, res) {
   // Search for the campaign
   var campaign = campaigns.get(req.params.slug)
   if(campaign) {
-    // If email is missing or malformed, just send the user straight to the HTML form submission page.
-    debugger
+    // Proceed only if a valid email is present
     if(req.query.email && validator.isEmail(req.query.email)) {
       // POST to the OSDI record submission helper endpoint
       request.post(campaign.OSDI_record_submissions_helper)
@@ -43,6 +42,7 @@ router.get('/:slug', function(req, res) {
         }
       )
     } else {
+      // If the email was missing or malformed, redirect to the regular HTML form submission page.
       res.redirect(campaign.HTML_form_path)
     }
   } else {
